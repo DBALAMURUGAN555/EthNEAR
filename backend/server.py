@@ -354,7 +354,7 @@ async def get_market_stats():
     
     total_market_value = sum(bond["current_price"] * bond["total_supply"] for bond in bonds)
     total_volume_24h = sum(tx["total_amount"] for tx in transactions if 
-                          datetime.now() - datetime.fromisoformat(tx["timestamp"].replace("Z", "+00:00")) < timedelta(days=1))
+                          datetime.now() - tx["timestamp"] < timedelta(days=1))
     
     avg_yield = sum(calculate_dynamic_yield(Bond(**bond)) for bond in bonds) / len(bonds) if bonds else 0
     
