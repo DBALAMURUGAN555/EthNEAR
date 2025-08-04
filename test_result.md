@@ -107,51 +107,63 @@ user_problem_statement: "Build Sovereign Bond Marketplace MVP with BondSwap AMM 
 backend:
   - task: "Bond Data Models and Risk Engine"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created Bond, Portfolio, BondTransaction models with risk calculation engine and dynamic yield formulas"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Bond models load correctly with all required fields. Risk engine calculates dynamic yields properly: Ghana bond shows 8.39% yield (base: 7.5%, risk: 2.3%). Risk calculation formula base_yield * (1 + risk_factor/100) working correctly with additional maturity adjustments."
 
   - task: "AMM Trading Logic"
     implemented: true
-    working: "NA"  
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented AMM-style pricing with supply scarcity, risk adjustment, and market demand factors"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: AMM trading logic fully functional. Buy operations execute successfully, portfolio updates correctly, and bond supply adjusts properly (Ghana supply reduced from 7500→7495→7490 after trades). Price calculations include scarcity, risk, and demand factors."
 
   - task: "Mock Bond Data"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Added 4 sovereign bonds: Ghana 2029 (7.5%, 2.3% risk), Nigeria 2026 (8.2%, 4.1% risk), Kenya 2028 (6.8%, 1.8% risk), South Africa 2027 (9.1%, 5.2% risk)"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: All 4 sovereign bonds load correctly with accurate parameters. Ghana (7.5% coupon, 2.3% risk), Nigeria (8.2% coupon, 4.1% risk), Kenya (6.8% coupon, 1.8% risk), South Africa (9.1% coupon, 5.2% risk). Dynamic pricing working with realistic price ranges."
 
   - task: "Trading API Endpoints"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created /bonds, /trade, /portfolio, /market-stats endpoints with buy/sell functionality and portfolio management"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: All trading endpoints functional. /bonds returns 4 bonds with dynamic pricing, /trade executes buy/sell with proper validations, /portfolio shows detailed holdings with P&L, /market-stats displays market overview. Fixed minor timestamp parsing issue in market-stats endpoint."
 
 frontend:
   - task: "Bond Trading Interface"
