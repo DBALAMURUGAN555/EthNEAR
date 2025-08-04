@@ -183,15 +183,18 @@ frontend:
 
   - task: "Portfolio Dashboard"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/App.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created portfolio view with total value, average yield, P&L tracking, and detailed bond holdings"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Portfolio dashboard working perfectly. After executing buy order for 3 Ghana bonds, portfolio correctly shows: Total Portfolio Value $10,710.83, Average Yield 8.4%, 1 Bond Type. Individual holding displays Ghana 2029 with Quantity: 13 bonds, Current Value: $10,710.83, Dynamic Yield: 8.39%, Unrealized P&L: -$2,289.17 (showing realistic market fluctuation). Portfolio updates in real-time after trades and navigation between Market/Portfolio tabs works seamlessly."
 
   - task: "Trading Modal and UX"
     implemented: true
