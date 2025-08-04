@@ -210,12 +210,11 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Bond Data Models and Risk Engine"
-    - "AMM Trading Logic"
-    - "Trading API Endpoints"
-    - "Mock Bond Data"
+    - "Bond Trading Interface"
+    - "Portfolio Dashboard"
+    - "Trading Modal and UX"
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
